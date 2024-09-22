@@ -1,0 +1,21 @@
+CREATE DATABASE `tik_tak_toe`;
+
+CREATE TABLE `points_table` ( 
+    `points_table_id` INT(16) NOT NULL AUTO_INCREMENT,
+    `first_move` VARCHAR(1) NOT NULL DEFAULT 'X',
+    `winner` VARCHAR(1) NOT NULL DEFAULT '';
+    `player_x_moves` VARCHAR(128) NOT NULL DEFAULT '', 
+    `player_o_moves` VARCHAR(128) NOT NULL DEFAULT '', 
+    `status` TINYINT(1) NOT NULL DEFAULT 1, 
+    `datetime_added` DATETIME NOT NULL, 
+    PRIMARY KEY (`points_table_id`) 
+);
+
+CREATE TABLE `players_steps` ( 
+    `player_steps_id` INT(16) NOT NULL AUTO_INCREMENT, 
+    `points_table_id` INT(16) NOT NULL DEFAULT 0, 
+    `player` INT(1) NOT NULL DEFAULT 1, 
+    `box_no` INT(1) NOT NULL DEFAULT 0, 
+    `datetime_added` DATETIME NOT NULL, 
+    PRIMARY KEY (`player_steps_id`) 
+);
